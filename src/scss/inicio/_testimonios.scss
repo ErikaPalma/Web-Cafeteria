@@ -1,0 +1,22 @@
+@use "base/mixins" as m;
+@use "base/variables" as v;
+@use "inicio/contenido";
+
+.nuestros-testimoniales{
+    @extend .contenido-principal;
+
+    .testimonial{
+        background-color: v.$cafeClaro;
+        padding: 2rem 4rem;
+        max-width: 50rem;
+        border-radius: 2rem;
+        margin: 0 auto;
+
+        .autor{
+            color: v.$primario;
+            font-family: v.$fuenteCursiva;
+            text-align: right;
+            font-size: 2.4rem;
+        }
+    }
+}

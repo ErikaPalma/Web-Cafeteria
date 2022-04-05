@@ -1,0 +1,38 @@
+@use "base/mixins" as m;
+@use "base/variables" as v;
+
+.footer{
+    background-color: v.$primario;
+
+    .footer-contenido{
+        background-color: v.$blanco;
+        margin-top: -32px;
+        
+        padding-bottom: 5rem;
+        @include m.tablet { 
+            display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        }
+
+        .footer-box{
+            text-align: center;
+            font-family: v.$fuenteCursiva;
+
+            h3{
+                color: v.$secundario;
+                font-family: v.$fuenteCursiva;
+            }
+            
+            p{
+                line-height: 2;
+                margin: 0
+            }
+        }
+    }
+    .copyright{
+        text-align: center;
+        color: v.$blanco;
+        padding: 3rem;
+        margin: 0
+    }
+}
