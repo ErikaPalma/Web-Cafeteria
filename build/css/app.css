@@ -382,14 +382,6 @@ ul {
   margin: 0;
 }
 
-.text-center {
-  text-align: center;
-}
-
-.bg-primario {
-  background-color: #5e311e;
-}
-
 h1,
 h2,
 .heading-blanco,
@@ -472,6 +464,18 @@ h3 {
 
 .header-inicio {
   background-image: url("../img/header_inicio.jpg");
+}
+
+.header-nosotros {
+  background-image: url("../img/header_nosotros.jpg");
+}
+
+.header-proceso {
+  background-image: url(../img/header_proceso.jpg);
+}
+
+.header-menu {
+  background-image: url(../img/header_menu.jpg);
 }
 
 .nav-principal {
@@ -738,4 +742,107 @@ h3 {
   font-family: "Bona Nova", serif;
   text-align: right;
   font-size: 2.4rem;
+}
+
+@media (min-width: 768px) {
+  .contenido-nosotros {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5rem;
+  }
+}
+.contenido-nosotros .imagen {
+  margin-bottom: 5rem;
+}
+@media (min-width: 768px) {
+  .contenido-nosotros .imagen {
+    margin-bottom: 0;
+  }
+}
+.contenido-nosotros .imagen img {
+  -webkit-transform: rotate(-6deg);
+          transform: rotate(-6deg);
+  border: 3rem solid #ffffff;
+  box-shadow: 9px 10px 5px -7px rgba(0, 0, 0, 0.35);
+}
+.contenido-nosotros .texto blockquote {
+  border-left: 0.5rem solid #5e311e;
+  padding: 2rem;
+  margin: 0;
+  font-size: 2rem;
+}
+
+.proceso-cafe {
+  margin-bottom: 5rem;
+}
+@media (min-width: 768px) {
+  .proceso-cafe {
+    display: flex;
+    gap: 5rem;
+    align-items: center;
+  }
+}
+.proceso-cafe:last-of-type {
+  margin-bottom: 0;
+}
+.proceso-cafe:nth-child(even) .texto {
+  order: -1;
+}
+.proceso-cafe .imagen, .proceso-cafe .texto {
+  flex: 1;
+}
+.proceso-cafe .texto {
+  margin-top: 1rem;
+}
+.proceso-cafe .texto h3 {
+  margin: 0;
+  text-align: left;
+  color: #5e311e;
+}
+.proceso-cafe .texto h3::after {
+  content: "";
+  display: block;
+  width: 50%;
+  height: 5px;
+  background-color: #c39c63;
+}
+
+.contenido-menu {
+  background-image: url(../img/cafe.jpg);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 100%;
+  /*recibe los px horizontal y vertical
+  Por cada pixel horizontal, quiero 2 verticales*/
+  aspect-ratio: 3/8;
+}
+@media (min-width: 480px) {
+  .contenido-menu {
+    aspect-ratio: 3/4;
+  }
+}
+@media (min-width: 768px) {
+  .contenido-menu {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5rem;
+    aspect-ratio: 16/6;
+    background-size: 40%;
+    background-position: bottom right;
+  }
+}
+.contenido-menu .texto p {
+  font-size: 2rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.bg-primario {
+  background-color: #5e311e;
+}
+
+.padding-bottom-0 {
+  padding-bottom: 0;
 }
