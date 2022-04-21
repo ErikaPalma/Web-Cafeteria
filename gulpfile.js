@@ -3,6 +3,7 @@ const { src, dest, watch, series, parallel } = require("gulp");
 const sass = require("gulp-sass")(require("sass"));
 const postcss = require("gulp-postcss");
 const autoprefixer = require("autoprefixer");
+const sourcemaps = require("gulp-sourcemaps");
 
 //Dependencias para imágenes
 const imagemin = require("gulp-imagemin");
@@ -13,9 +14,11 @@ function css(done) {
   //Compilar sass
   //Identificar archivo
   src("src/scss/app.scss")
+    .pipe(sourcemaps.init())
     //Compilar
     .pipe(sass())
     .pipe(postcss([autoprefixer()]))
+    .pipe(sourcemaps.write("."))
     //Guardar el .css
     .pipe(dest("build/css"));
   done();
@@ -50,11 +53,10 @@ function versionAvif() {
     .pipe(dest("build/img"));
 }
 
-function dev(done) {
+function dev() {
   watch("src/scss/**/*.scss", css);
   //si hay una nueva imagen, manda llamar la tarea de nuevo
   watch("src/img/**/*", imagenes);
-  done();
 }
 
 exports.css = css;
